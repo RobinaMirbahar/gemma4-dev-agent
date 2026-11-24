@@ -1,11 +1,11 @@
-# Gemma 4 Autonomous SWE Agent: Zero-Leakage & Shakeup-Resistant Engineering
+# Gemma 4 Developer Agent: Quantized Reasoning & Context-Efficient Autonomous SWE
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB.svg)](https://www.python.org/)
-[![Audit](https://img.shields.io/badge/Leakage_Audit-Passing-brightgreen.svg)](audit_leakage.py)
+[![Audit](https://img.shields.io/badge/Integrity_Audit-Passing-brightgreen.svg)](audit_leakage.py)
 [![Competition](https://img.shields.io/badge/Kaggle-Gemma_4_Developer_Agent-20BEFF.svg)](https://www.kaggle.com/competitions/gemma-4-developer-agent)
 
-> **Empirical ablation study, zero-leakage submission pipeline, and public/private leaderboard shakeup analysis** for quantized (`W4A16`) thinking-model software engineering agents on **Google — The Gemma 4 Developer Agent Competition** (Main 31B & Small Model E4B tracks).
+> **Empirical ablation study and reproducible agent architecture** for deploying open-weights, 4-bit quantized (`W4A16`) Gemma 4 reasoning models (`31B` & `E4B`) as autonomous software engineering agents on consumer-grade hardware (`4 × NVIDIA L4`), built for **Google — The Gemma 4 Developer Agent Competition**.
 
 ---
 
@@ -15,7 +15,7 @@ Deploying 4-bit quantized (`W4A16`) reasoning models as autonomous software engi
 
 1. **Turn-to-Turn Reasoning Amnesia:** Disabling `include_thoughts` and starving `thinking_budget` (`1024`) caused a **-0.06** public-score regression (`0.18 → 0.12`). Restoring `include_thoughts: true` and scaling `thinking_budget` recovered **+0.03** immediately (`v20`, `0.15`), with `v21` (`TB=3584`) isolating near-native reasoning depth.
 2. **Global Wall-Clock Timeout Cliff:** Over-allocating tool budgets (`40 calls / 8 min` at `TB=3072`) silently exhausted the global evaluation wall-clock. Bounding budgets to `28c / 7m / 60t` (31B) and `24c / 6m / 52t` (E4B) eliminates timeout failures.
-3. **Public-Split Overfitting & Shakeup Risk:** On finite public evaluation splits ($N \in [50, 100]$), a 16-way tie at `0.24` vs. `0.18` lies inside the 95% Wilson confidence interval ($p > 0.35$). Removing repo-specific prompt heuristics and fixing `seed: 42` reduces private leaderboard variance.
+3. **Cross-Repository Generalization:** On finite evaluation benchmarks ($N \in [50, 100]$), small score differences lie within the 95% Wilson confidence interval ($p > 0.35$). Enforcing repo-agnostic prompts, automated leakage checks, and fixed-seed sampling (`seed: 42`) improves out-of-distribution reliability on unseen repositories.
 
 Full statistical analysis and methodology are documented in **[TECHNICAL_REPORT.md](TECHNICAL_REPORT.md)**.
 
@@ -71,7 +71,7 @@ uv run python audit_leakage.py
 ```bibtex
 @misc{mirbahar2026gemma4swe,
   author       = {Robina Mirbahar},
-  title        = {Zero-Leakage, Shakeup-Resistant Gemma 4 Autonomous SWE Agents},
+  title        = {Gemma 4 Developer Agent: Quantized Reasoning and Context-Efficient Autonomous Software Engineering},
   year         = {2026},
   howpublished = {\url{https://github.com/RobinaMirbahar/gemma4-dev-agent}}
 }

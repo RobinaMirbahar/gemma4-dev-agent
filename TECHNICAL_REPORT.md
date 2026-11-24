@@ -1,4 +1,4 @@
-# Technical Report: Zero-Leakage, Shakeup-Resistant Gemma 4 Autonomous SWE Agents (`v20`–`v21`)
+# Technical Report: Quantized Reasoning & Context-Efficient Gemma 4 Autonomous Developer Agents (`v20`–`v21`)
 
 **Competition:** Google — The Gemma 4 Developer Agent Competition (Kaggle)  
 **Tracks:** Main Track (`gemma-4-31b-it-qat-w4a16-ct`) & Small Model Track (`gemma-4-e4b-it-qat-w4a16-ct`)  
