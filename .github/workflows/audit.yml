@@ -1,0 +1,23 @@
+name: Leakage & Integrity Audit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install PyYAML
+        run: pip install pyyaml
+      - name: Validate Builders & Zero-Leakage Audit
+        run: |
+          python build_v20.py
+          python build_v21.py
+          python audit_leakage.py
