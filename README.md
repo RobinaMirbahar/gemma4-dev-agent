@@ -73,6 +73,6 @@ uv run python audit_leakage.py
   author       = {Robina Mirbahar},
   title        = {Zero-Leakage, Shakeup-Resistant Gemma 4 Autonomous SWE Agents},
   year         = {2026},
-  howpublished = {\url{https://github.com/RobinaMirbahar/gemma4-adk-cot-agent}}
+  howpublished = {\url{https://github.com/RobinaMirbahar/gemma4-dev-agent}}
 }
 ```
