@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+v18_*/
+v19_*/
+build_v18.py
+build_v19.py
