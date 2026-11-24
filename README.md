@@ -21,7 +21,26 @@ Full statistical analysis and methodology are documented in **[TECHNICAL_REPORT.
 
 ---
 
-## Empirical Ablation Summary
+## System Architecture
+
+![Gemma 4 Autonomous SWE Agent System Architecture](figures/architecture_pipeline.png)
+
+### Hardware, Serving & ADK Configuration
+
+| Component | Main Track (`31B`) | Small Model Track (`E4B`) | Engineering Rationale |
+| :--- | :--- | :--- | :--- |
+| **Base Model** | `gemma-4-31b-it-qat-w4a16-ct` | `gemma-4-e4b-it-qat-w4a16-ct` | 4-bit QAT weights served offline via vLLM (`TP=4`) |
+| **GPU Runtime** | `4 × NVIDIA L4` (96 GB VRAM) | `4 × NVIDIA L4` (96 GB VRAM) | `max_model_len = 32,768`, `gpu_memory_utilization = 0.90` |
+| **Reasoning Config** | `include_thoughts: true`, `TB = 2048–3584` | `include_thoughts: true`, `TB = 1536` | Preserves multi-turn CoT while avoiding `v18` timeout cliff |
+| **Sampling** | `T = 0.2`, `top_p = 0.95`, `seed = 42` | `T = 0.2`, `top_p = 0.95`, `seed = 42` | Low-variance deterministic patch synthesis |
+| **Context Hygiene** | Bounded `read_file` (40–75L) + `STATE:` | Bounded `read_file` (40–60L) + `STATE:` | Prevents premature ADK compaction (`14,336` tokens) |
+| **Execution Budget** | `28 calls / 7 min / 60 turns` | `24 calls / 6 min / 52 turns` | Hard stop-loss with 4-call / 60s verification reserve |
+
+---
+
+## Empirical Ablation Results
+
+![Gemma 4 Thinking Budget and Track Ablation](figures/thinking_budget_ablation.png)
 
 | Version | Model Track | `include_thoughts` | `thinking_budget` | Budget | Zero-Leakage | Public Score |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
