@@ -3,9 +3,15 @@
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB.svg)](https://www.python.org/)
 [![Audit](https://img.shields.io/badge/Integrity_Audit-Passing-brightgreen.svg)](audit_leakage.py)
+[![Paper](https://img.shields.io/badge/Companion_Paper-Gemma_4_Localization-B31B1B.svg)](https://github.com/RobinaMirbahar/gemma4-opaque-localization-paper)
 [![Competition](https://img.shields.io/badge/Kaggle-Gemma_4_Developer_Agent-20BEFF.svg)](https://www.kaggle.com/competitions/gemma-4-developer-agent)
 
 > **Empirical ablation study and reproducible agent architecture** for deploying open-weights, 4-bit quantized (`W4A16`) Gemma 4 reasoning models (`31B` & `E4B`) as autonomous software engineering agents on consumer-grade hardware (`4 × NVIDIA L4`), built for **Google — The Gemma 4 Developer Agent Competition**.
+
+### News & Experiment Log
+- **[Nov 24, 2026]** Released `v21_main_31b` (`TB=3584`, `include_thoughts=true`, `seed=42`) and submitted `v20_small_e4b` (Ref `58825231`).
+- **[Nov 23, 2026]** `v20_main_31b` (Ref `58759418`) recovered **+0.03** (`0.12 → 0.15`) by restoring `include_thoughts: true` and scaling `thinking_budget` from `1024 → 2048`.
+- **[Nov 11, 2026]** Published companion paper figures and study in [gemma4-opaque-localization-paper](https://github.com/RobinaMirbahar/gemma4-opaque-localization-paper).
 
 ---
 
