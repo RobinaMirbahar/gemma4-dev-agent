@@ -1,5 +1,7 @@
 # Gemma 4 Developer Agent: Quantized Reasoning & Context-Efficient Autonomous SWE
 
+**Author:** [Robina Mirbahar](https://github.com/RobinaMirbahar) · Google Developer Expert (AI/ML)
+
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB.svg)](https://www.python.org/)
 [![Audit](https://img.shields.io/badge/Integrity_Audit-Passing-brightgreen.svg)](audit_leakage.py)
