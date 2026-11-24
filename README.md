@@ -1,13 +1,9 @@
 # Gemma 4 Developer Agent: Quantized Reasoning & Context-Efficient Autonomous SWE
 
-**Solo Author:** Robina Mirbahar  
-**Competition:** [Google — The Gemma 4 Developer Agent Competition](https://www.kaggle.com/competitions/gemma-4-developer-agent)  
-**Companion Paper Repo:** [gemma4-opaque-localization-paper](https://github.com/RobinaMirbahar/gemma4-opaque-localization-paper)  
-**License:** Code under Apache-2.0 (`LICENSE`); companion documentation under CC BY 4.0
-
 > **Author & Architect:** [Robina Mirbahar](https://github.com/RobinaMirbahar) (Google Developer Expert in Cloud & AI · Google Cloud Champion Innovator · Co-Author of *AI Engineering*)  
 > **Competition & Report:** [Google — The Gemma 4 Developer Agent Competition](https://www.kaggle.com/competitions/gemma-4-developer-agent) · [Technical Report](TECHNICAL_REPORT.md) · [Companion Paper Repo](https://github.com/RobinaMirbahar/gemma4-opaque-localization-paper)  
-> **Core Stack:** [Google Gemma 4](https://ai.google.dev/gemma) (`31B` & `E4B` `W4A16-CT`), Google ADK (Lean-6 Tools), vLLM (`TP=4` on `4 × NVIDIA L4`), and Automated Integrity Auditor (`audit_leakage.py`).
+> **Core Stack:** [Google Gemma 4](https://ai.google.dev/gemma) (`31B` & `E4B` `W4A16-CT`), Google ADK (Lean-6 Tools), vLLM (`TP=4` on `4 × NVIDIA L4`), and Automated Integrity Auditor (`audit_leakage.py`).  
+> **License:** Code under Apache-2.0 (`LICENSE`); companion documentation under CC BY 4.0
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB.svg)](https://www.python.org/)
